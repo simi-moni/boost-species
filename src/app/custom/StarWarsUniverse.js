@@ -28,8 +28,7 @@ export default class StarWarsUniverse extends EventEmitter {
             self.species.push(species);
             self.emit(StarWarsUniverse.events.SPECIES_CREATED, { speciesCount: self.speciesCount });
             if (self._maxSpecies === self.speciesCount) {
-                this.emit(StarWarsUniverse.events.MAX_SPECIES_REACHED);
-                return;
+                self.emit(StarWarsUniverse.events.MAX_SPECIES_REACHED);
             } else {
                 self.createSpecies();
             }
